@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
-import { Dashboard } from "@/components/Dashboard";
-import { DocumentUpload } from "@/components/DocumentUpload";
-import { AssessmentGenerator } from "@/components/AssessmentGenerator";
-import { Analytics } from "@/components/Analytics";
+import { WellnessDashboard } from "@/components/WellnessDashboard";
+import { MoodCheckIn } from "@/components/MoodCheckIn";
+import { WellnessRecommendations } from "@/components/WellnessRecommendations";
 
 const Index = () => {
   const [currentView, setCurrentView] = useState("dashboard");
@@ -11,29 +10,29 @@ const Index = () => {
   const renderContent = () => {
     switch (currentView) {
       case "dashboard":
-        return <Dashboard />;
-      case "upload":
-        return <DocumentUpload />;
-      case "assessments":
-        return <AssessmentGenerator />;
-      case "analytics":
-        return <Analytics />;
-      case "library":
+        return <WellnessDashboard />;
+      case "checkin":
+        return <MoodCheckIn />;
+      case "recommendations":
+        return <WellnessRecommendations />;
+      case "trends":
+        return <WellnessDashboard />;
+      case "resources":
         return (
           <div className="p-8 text-center">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Document Library</h2>
-            <p className="text-muted-foreground">Coming soon - Organize and manage your learning materials</p>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Mental Health Resources</h2>
+            <p className="text-muted-foreground">Coming soon - Access support resources and educational materials</p>
           </div>
         );
       case "settings":
         return (
           <div className="p-8 text-center">
             <h2 className="text-2xl font-bold text-foreground mb-4">Settings</h2>
-            <p className="text-muted-foreground">Coming soon - Customize your learning experience</p>
+            <p className="text-muted-foreground">Coming soon - Customize your wellness experience</p>
           </div>
         );
       default:
-        return <Dashboard />;
+        return <WellnessDashboard />;
     }
   };
 

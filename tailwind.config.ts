@@ -47,6 +47,10 @@ export default {
           DEFAULT: "hsl(var(--warning))",
           foreground: "hsl(var(--warning-foreground))",
         },
+        calm: "hsl(var(--calm))",
+        stress: "hsl(var(--stress))",
+        joy: "hsl(var(--joy))",
+        sad: "hsl(var(--sad))",
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",

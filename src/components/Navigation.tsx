@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Home, 
-  Upload, 
-  Brain, 
+  Heart, 
+  TrendingUp, 
+  Lightbulb, 
   BarChart3, 
-  BookOpen, 
+  Brain, 
   Settings,
   Menu,
   X
@@ -21,11 +21,11 @@ export const Navigation = ({ currentView, onViewChange }: NavigationProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: "dashboard", label: "Dashboard", icon: Home },
-    { id: "upload", label: "Upload", icon: Upload },
-    { id: "assessments", label: "Assessments", icon: Brain },
-    { id: "analytics", label: "Analytics", icon: BarChart3 },
-    { id: "library", label: "Library", icon: BookOpen },
+    { id: "dashboard", label: "Wellness Dashboard", icon: BarChart3 },
+    { id: "checkin", label: "Daily Check-In", icon: Heart },
+    { id: "recommendations", label: "Recommendations", icon: Lightbulb },
+    { id: "trends", label: "My Trends", icon: TrendingUp },
+    { id: "resources", label: "Resources", icon: Brain },
     { id: "settings", label: "Settings", icon: Settings },
   ];
 
@@ -62,11 +62,11 @@ export const Navigation = ({ currentView, onViewChange }: NavigationProps) => {
           {/* Logo */}
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <Brain className="w-6 h-6 text-white" />
+              <Heart className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">AdaptiveLearn</h1>
-              <p className="text-xs text-muted-foreground">Study Companion</p>
+              <h1 className="text-xl font-bold text-foreground">WellnessMind</h1>
+              <p className="text-xs text-muted-foreground">Mental Health Support</p>
             </div>
           </div>
 
@@ -92,9 +92,9 @@ export const Navigation = ({ currentView, onViewChange }: NavigationProps) => {
                 >
                   <Icon className="w-4 h-4 mr-3" />
                   {item.label}
-                  {item.id === "assessments" && (
+                  {item.id === "checkin" && (
                     <Badge variant="secondary" className="ml-auto text-xs">
-                      3
+                      ✓
                     </Badge>
                   )}
                 </Button>
@@ -102,21 +102,21 @@ export const Navigation = ({ currentView, onViewChange }: NavigationProps) => {
             })}
           </nav>
 
-          {/* Progress Summary */}
+          {/* Wellness Summary */}
           <div className="mt-8 p-4 rounded-lg bg-gradient-to-br from-muted/50 to-muted/30 border border-border/50">
             <h3 className="text-sm font-medium text-foreground mb-2">This Week</h3>
             <div className="space-y-2 text-xs text-muted-foreground">
               <div className="flex justify-between">
-                <span>Study Sessions</span>
-                <span className="font-medium text-foreground">17</span>
+                <span>Check-ins</span>
+                <span className="font-medium text-foreground">7/7</span>
               </div>
               <div className="flex justify-between">
-                <span>Avg Score</span>
-                <span className="font-medium text-success">84%</span>
+                <span>Avg Mood</span>
+                <span className="font-medium text-success">4.2/5</span>
               </div>
               <div className="flex justify-between">
-                <span>Time Spent</span>
-                <span className="font-medium text-foreground">28h</span>
+                <span>Wellness Streak</span>
+                <span className="font-medium text-foreground">7 days</span>
               </div>
             </div>
           </div>
